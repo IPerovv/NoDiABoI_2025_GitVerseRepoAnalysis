@@ -16,5 +16,7 @@ const (
 
 	InitialBackoff = 1 * time.Second
 
+	BatchSizeDbWrite = 1000
+
 	TopStarsCount = 10
 )

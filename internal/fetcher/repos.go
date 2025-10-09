@@ -31,10 +31,7 @@ func FetchTotalRepos(ctx context.Context) (int, error) {
 }
 
 func FetchAllRepoNames(ctx context.Context) ([]string, error) {
-	total, err := FetchTotalRepos(ctx)
-	if err != nil {
-		return nil, err
-	}
+	total := 100
 	totalPages := (total + config.PageLimit - 1) / config.PageLimit
 
 	names := make([]string, 0, total)
