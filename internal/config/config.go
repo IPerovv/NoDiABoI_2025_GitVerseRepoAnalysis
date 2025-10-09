@@ -1,0 +1,20 @@
+package config
+
+import "time"
+
+const (
+	BaseURL     = "https://gitverse.ru/sc/sbt/api/v1"
+	SearchPath  = "/repos/search"
+	UserAgent   = "gitverse-scraper/1.0"
+	PageLimit   = 50
+	MaxRetries  = 6
+	HTTPTimeout = 30 * time.Second
+
+	MaxWorkers     = 40
+	RatePerSecond  = 100
+	ProgressPeriod = 30 * time.Second
+
+	InitialBackoff = 1 * time.Second
+
+	TopStarsCount = 10
+)
