@@ -9,27 +9,32 @@
 ### 1.3 Проверка статуса сбора датасета
 `curl http://localhost:8080/status`
 
-### 1.4 Просмотр датасета в БД
+### 1.4 Получение данных в csv формате (доступно только после сбора данных)
+`curl http://localhost:8080/export/csv`
+
+`docker cp app_container:/app_binary/dataset/tables ./dataset/`
+
+### 1.5 Просмотр датасета в БД
 `docker exec -it mongodb /bin/bash`
 
 `mongo`
 
 `use golang`
 
-#### 1.4.1 Просмотр количества записей в БД
+#### 1.5.1 Просмотр количества записей в БД
 
 `db.repos.count()`
 
-#### 1.4.2 Просмотр записей в БД
+#### 1.5.2 Просмотр записей в БД
 
 `db.repos.find().pretty()`
 
-### 1.5 Дамп данных
+### 1.6 Дамп данных
 `docker exec -it mongodb mongodump --uri="mongodb://localhost:27017/golang" --out=/data/dump`
 
 `docker cp mongodb:/data/dump ./mongo_dump`
 
-### 1.5 Получение данных в json формате
+### 1.7 Получение данных в json формате
 `docker exec -it mongodb mongoexport --uri="mongodb://localhost:27017/golang" --collection=repos --out=/data/repos.json --jsonArray`
 
 `docker cp mongodb:/data/repos.json ./repos.json`
