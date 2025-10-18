@@ -9,6 +9,7 @@ RUN go build -o /app_build ./cmd/main.go
 FROM alpine AS run_stage
 WORKDIR /app_binary
 COPY --from=build_stage /app_build ./app_build
+COPY dataset ./dataset
 RUN chmod +x ./app_build
 EXPOSE 8080/tcp
 ENTRYPOINT ["./app_build"]

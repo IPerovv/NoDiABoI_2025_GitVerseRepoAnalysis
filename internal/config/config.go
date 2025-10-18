@@ -10,6 +10,8 @@ const (
 	MaxRetries  = 6
 	HTTPTimeout = 30 * time.Second
 
+	PathToJSONDataset = "dataset/repos_pretty.json"
+
 	MaxWorkers     = 40
 	RatePerSecond  = 100
 	ProgressPeriod = 30 * time.Second
